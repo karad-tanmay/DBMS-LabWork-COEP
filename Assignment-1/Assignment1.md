@@ -1,5 +1,5 @@
 # Assignment 1 : DBMS
-## MIS No.: 612303083 (TY 1, ADS 4)
+## MIS No.: 612303083 (TY 1, ADS 3)
 
 ## Q.1 University
 
