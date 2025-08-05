@@ -1,13 +1,11 @@
 # Assignment 1 : DBMS
-### MIS No.: 612303083 (TY 1, ADS 4)
+## MIS No.: 612303083 (TY 1, ADS 4)
 
 ## Q.1 University
 
 ### DQL - Solution queries:
 - Code:
 ```
-USE university;
-
 -- Find the names of all the students whose total credits are greater than 100.
 SELECT name FROM student WHERE tot_cred > 100;
 ```
@@ -77,8 +75,7 @@ WHERE section.semester = 'Spring' AND section.year = 2009;
 
 ## Q.2 Railway Station
 
-
-### 5. DQL - Solution queries:
+### DQL - Solution queries:
 - Code:
 ```
 -- Find pairs of stations (station codes) that have a track (direct connection) with distance less than 20Kms between them.
