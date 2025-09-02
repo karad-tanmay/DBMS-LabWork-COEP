@@ -5,7 +5,7 @@
 
 ### DQL - Solution queries:
 - Code:
-```
+```MySQL
 -- Find the names of all the students whose total credits are greater than 100.
 SELECT name FROM student WHERE tot_cred > 100;
 ```
@@ -13,7 +13,7 @@ SELECT name FROM student WHERE tot_cred > 100;
 
 ![output](./university/outputs/uni-q1.png)
 - Code:
-```
+```MySQL
 -- Find the course id and grades of all courses taken by any student named 'Tanaka'.
 SELECT takes.course_id, takes.grade
 FROM student
@@ -25,7 +25,7 @@ where name = "Tanaka";
 
 ![output](./university/outputs/uni-q2.png)
 - Code:
-```
+```MySQL
 -- Find the courses which are offered in both 'Fall' and 'Spring' semester (not necessarily in the same year).
 SELECT title
 FROM course
@@ -42,7 +42,7 @@ WHERE semester = 'Fall'
 
 ![output](./university/outputs/uni-q3.png)
 - Code:
-```
+```MySQL
 -- Find the names of all the instructors from Comp. Sci. department.
 SELECT name FROM instructor WHERE dept_name = 'Comp. Sci.';
 ```
@@ -50,7 +50,7 @@ SELECT name FROM instructor WHERE dept_name = 'Comp. Sci.';
 
 ![output](./university/outputs/uni-q4.png)
 - Code:
-```
+```MySQL
 -- Find the course id and titles of all courses taught by an instructor named 'Srinivasan'
 SELECT DISTINCT course.course_id, course.title
 FROM course
@@ -62,7 +62,7 @@ WHERE instructor.name = 'Srinivasan';
 
 ![output](./university/outputs/uni-q5.png)
 - Code:
-```
+```MySQL
 -- Find the names of instructors who have taught at least one course in Spring 2009.
 SELECT DISTINCT name FROM instructor
 JOIN teaches ON instructor.ID = teaches.ID
@@ -77,7 +77,7 @@ WHERE section.semester = 'Spring' AND section.year = 2009;
 
 ### DQL - Solution queries:
 - Code:
-```
+```MySQL
 -- Find pairs of stations (station codes) that have a track (direct connection) with distance less than 20Kms between them.
 SELECT stcode1, stcode2
 FROM track
@@ -87,7 +87,7 @@ WHERE distance < 20;
 
 ![output](./railways/outputs/railways-q1.png)
 - Code:
-```
+```MySQL
 -- Find the IDs of all the trains which have a stop at THANE
 SELECT id
 FROM trainhalts
@@ -99,7 +99,7 @@ WHERE station.name = 'Thane';
 
 ![output](./railways/outputs/railways-q2.png)
 - Code:
-```
+```MySQL
 -- Find the names of all trains that start at MUMBAI.
 SELECT train.name
 FROM train
@@ -111,7 +111,7 @@ WHERE trainhalts.seqno = 0 AND station.name = 'Mumbai';
 
 ![output](./railways/outputs/railways-q3.png)
 - Code:
-```
+```MySQL
 -- List all the stations in order of visit by the train 'CST-AMR_LOCAL'.
 SELECT station.name
 FROM station

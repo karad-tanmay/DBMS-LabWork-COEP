@@ -4,7 +4,7 @@
 ## Q.1 Write the DDL and DML statements for the following. -
 ### DDL - Solution queries:
 - Code:
-```
+```MySQL
 -- Each offering of a course (i.e. a section) can have many Teaching assistants; each teaching assistant is a student.  Extend the existing schema(Add/Alter tables) to accommodate this requirement.
 CREATE TABLE TA (
     ID VARCHAR(5),
@@ -19,7 +19,7 @@ CREATE TABLE TA (
 );
 ```
 - Code:
-```
+```MySQL
 -- According to the existing schema, one student can have only one advisor.
 -- Alter the schema to allow a student to have multiple advisors and make sure that you are able to insert multiple advisors for a student.
 DROP TABLE advisor;
@@ -37,7 +37,7 @@ CREATE TABLE advisor (
 
 ### DML and DQL - Solution queries:
 - Code:
-```
+```MySQL
 insert into instructor values ('30605', 'Ashok', 'Comp. Sci.', '75000');
 
 insert into advisor values ('00128', '45565');
@@ -54,7 +54,7 @@ insert into advisor values ('76653', '22222');
 insert into advisor values ('76653', '76543');
 ```
 - Code:
-```
+```MySQL
 -- Find all students who have more than 3 advisors
 SELECT s.name
 FROM student s
@@ -66,7 +66,7 @@ HAVING COUNT(a.i_ID) > 3;
 
 ![output](./outputs/q1.png)
 - Code:
-```
+```MySQL
 -- Find all students who are co-advised by Prof. Srinivas and Prof. Ashok.
 SELECT s.name
 FROM student s
@@ -80,7 +80,7 @@ WHERE i1.name = 'Srinivasan' AND i2.name = 'Ashok';
 
 ![output](./outputs/q2.png)
 - Code:
-```
+```MySQL
 -- Find students advised by instructors from different departments. etc.
 SELECT DISTINCT s.name
 FROM student s
@@ -98,7 +98,7 @@ WHERE i1.dept_name <> i2.dept_name;
 
 ### DDL - Solution queries:
 - Code:
-```
+```MySQL
 -- Delete all information in the database which is more than 10 years old. Add data as necessary to verify your query.
 DELETE FROM takes
 WHERE year < YEAR(CURDATE()) - 10;
@@ -110,7 +110,7 @@ DELETE FROM section
 WHERE year < YEAR(CURDATE()) - 10;
 ```
 - Code:
-```
+```MySQL
 -- Delete the course CS 101.  Any course which has CS 101 as a prereq should remove CS 101 from its prereq set.  Create a cascade constraint to enforce the above rule, and verify that it is working.
 drop table prereq;
     
